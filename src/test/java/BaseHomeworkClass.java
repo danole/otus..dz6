@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -39,7 +38,7 @@ public class BaseHomeworkClass {
             element3.submit();
 
         } catch (IOException e) {
-            System.err.println("ОШИБКА: Файл свойств отсуствует!");
+            System.err.println("РћРЁРР‘РљРђ: Р¤Р°Р№Р» СЃРІРѕР№СЃС‚РІ РѕС‚СЃСѓСЃС‚РІСѓРµС‚!");
         }
     }
 
@@ -53,21 +52,21 @@ public class BaseHomeworkClass {
         driver = new ChromeDriver(options);
     }
 
-    //Создает WebElement c явным ожиданием на кликабельность
+    //РЎРѕР·РґР°РµС‚ WebElement c СЏРІРЅС‹Рј РѕР¶РёРґР°РЅРёРµРј РЅР° РєР»РёРєР°Р±РµР»СЊРЅРѕСЃС‚СЊ
     protected WebElement waitToClickableButton(String xpath) {
         WebElement element = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
         return element;
     }
 
-    //Создает WebElement c явным ожиданием на видимость элемента в DOM дереве
+    //РЎРѕР·РґР°РµС‚ WebElement c СЏРІРЅС‹Рј РѕР¶РёРґР°РЅРёРµРј РЅР° РІРёРґРёРјРѕСЃС‚СЊ СЌР»РµРјРµРЅС‚Р° РІ DOM РґРµСЂРµРІРµ
     protected WebElement waitToVisibleElement(String xpath) {
         WebElement element = (new WebDriverWait(driver, 10))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         return element;
     }
 
-    //Функция, которая проверяет, нажата ли кнопка, если нажата - кликает по ней 2 раза, если нет- 1 раз.
+    //Р¤СѓРЅРєС†РёСЏ, РєРѕС‚РѕСЂР°СЏ РїСЂРѕРІРµСЂСЏРµС‚, РЅР°Р¶Р°С‚Р° Р»Рё РєРЅРѕРїРєР°, РµСЃР»Рё РЅР°Р¶Р°С‚Р° - РєР»РёРєР°РµС‚ РїРѕ РЅРµР№ 2 СЂР°Р·Р°, РµСЃР»Рё РЅРµС‚- 1 СЂР°Р·.
     protected void movingTheCheckboxToThePressedPosition(boolean select, WebElement element) {
         if (select == true) {
             element.click();
@@ -84,3 +83,5 @@ public class BaseHomeworkClass {
 //        }
 //    }
 }
+
+

@@ -11,11 +11,11 @@ public class HomeworkTest extends BaseHomeworkClass {
     public void writeAboutMeTest() throws InterruptedException {
 
         driver.get("https://otus.ru");
-        logger.info("Открылся браузер, перешли на сайт");
+        logger.info("РћС‚РєСЂС‹Р»СЃСЏ Р±СЂР°СѓР·РµСЂ, РїРµСЂРµС€Р»Рё РЅР° СЃР°Р№С‚");
 
         WebElement registrationModalWindow = waitToClickableButton("//button[@class='header2__auth js-open-modal']");
         registrationModalWindow.click();
-        logger.info("Открылось модальное окно для регистрации ");
+        logger.info("РћС‚РєСЂС‹Р»РѕСЃСЊ РјРѕРґР°Р»СЊРЅРѕРµ РѕРєРЅРѕ РґР»СЏ СЂРµРіРёСЃС‚СЂР°С†РёРё ");
 
         WebElement email = waitToVisibleElement("//input[@type='text' and @name='email' and @autocomplete='off']");
         WebElement password = waitToVisibleElement("//input[@name='password']");
@@ -27,48 +27,48 @@ public class HomeworkTest extends BaseHomeworkClass {
         submit.submit();
 
 //        signUp(email, password, submit);
-        logger.info("Вошли в личный кабинет");
+        logger.info("Р’РѕС€Р»Рё РІ Р»РёС‡РЅС‹Р№ РєР°Р±РёРЅРµС‚");
 
         WebElement headerRight = waitToClickableButton("//div[@class='header2-menu__item" +
                 " header2-menu__item_small" +
                 " header2-menu__item_dropdown" +
                 " header2-menu__item_dropdown_no-border']");
         headerRight.click();
-        logger.info("Открыли меню профиля");
+        logger.info("РћС‚РєСЂС‹Р»Рё РјРµРЅСЋ РїСЂРѕС„РёР»СЏ");
 
         WebElement myProfile = waitToVisibleElement("//a[@href='/lk/biography/personal/']");
         myProfile.click();
-        logger.info("Нажали на кнопку \"Мой профиль\"");
+        logger.info("РќР°Р¶Р°Р»Рё РЅР° РєРЅРѕРїРєСѓ \"РњРѕР№ РїСЂРѕС„РёР»СЊ\"");
 
         WebElement name = waitToVisibleElement("//input[@name='fname']");
         name.clear();
-        name.sendKeys("Тест");
-        logger.info("Очистили меню \"Имя\" и ввели значение заново");
+        name.sendKeys("РўРµСЃС‚");
+        logger.info("РћС‡РёСЃС‚РёР»Рё РјРµРЅСЋ \"РРјСЏ\" Рё РІРІРµР»Рё Р·РЅР°С‡РµРЅРёРµ Р·Р°РЅРѕРІРѕ");
 
         WebElement nameEng = waitToVisibleElement("//input[@name='fname_latin']");
         nameEng.clear();
         nameEng.sendKeys("Test");
-        logger.info("Очистили меню \"Имя на латинице\" и ввели значение заново");
+        logger.info("РћС‡РёСЃС‚РёР»Рё РјРµРЅСЋ \"РРјСЏ РЅР° Р»Р°С‚РёРЅРёС†Рµ\" Рё РІРІРµР»Рё Р·РЅР°С‡РµРЅРёРµ Р·Р°РЅРѕРІРѕ");
 
         WebElement surname = waitToVisibleElement("//input[@name='lname']");
         surname.clear();
-        surname.sendKeys("Тестович");
-        logger.info("Очистили меню \"Фамилия\" и ввели значение заново");
+        surname.sendKeys("РўРµСЃС‚РѕРІРёС‡");
+        logger.info("РћС‡РёСЃС‚РёР»Рё РјРµРЅСЋ \"Р¤Р°РјРёР»РёСЏ\" Рё РІРІРµР»Рё Р·РЅР°С‡РµРЅРёРµ Р·Р°РЅРѕРІРѕ");
 
         WebElement surnameEng = waitToVisibleElement("//input[@name='lname_latin']");
         surnameEng.clear();
         surnameEng.sendKeys("Testovich");
-        logger.info("Очистили меню \"Фамилия на латинице\" и ввели значение заново");
+        logger.info("РћС‡РёСЃС‚РёР»Рё РјРµРЅСЋ \"Р¤Р°РјРёР»РёСЏ РЅР° Р»Р°С‚РёРЅРёС†Рµ\" Рё РІРІРµР»Рё Р·РЅР°С‡РµРЅРёРµ Р·Р°РЅРѕРІРѕ");
 
         WebElement blogName = waitToVisibleElement("//input[@name='blog_name']");
         blogName.clear();
         blogName.sendKeys("Test");
-        logger.info("Очистили меню \"Имя в блоге\" и ввели значение заново");
+        logger.info("РћС‡РёСЃС‚РёР»Рё РјРµРЅСЋ \"РРјСЏ РІ Р±Р»РѕРіРµ\" Рё РІРІРµР»Рё Р·РЅР°С‡РµРЅРёРµ Р·Р°РЅРѕРІРѕ");
 
         WebElement dateOfBirth = waitToVisibleElement("//input[@name='date_of_birth']");
         dateOfBirth.clear();
         dateOfBirth.sendKeys("11.09.1990");
-        logger.info("Очистили меню \"Дата рождения\" и ввели значение заново");
+        logger.info("РћС‡РёСЃС‚РёР»Рё РјРµРЅСЋ \"Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ\" Рё РІРІРµР»Рё Р·РЅР°С‡РµРЅРёРµ Р·Р°РЅРѕРІРѕ");
 
         WebElement country = waitToVisibleElement("//div[@class='select" +
                 " lk-cv-block__input " +
@@ -76,11 +76,11 @@ public class HomeworkTest extends BaseHomeworkClass {
                 "js-lk-cv-dependent-master" +
                 " js-lk-cv-custom-select']/*/*[2]");
         country.click();
-        logger.info("Нажали на кнопку \"Страна\" ");
+        logger.info("РќР°Р¶Р°Р»Рё РЅР° РєРЅРѕРїРєСѓ \"РЎС‚СЂР°РЅР°\" ");
 
-        WebElement countryButton = waitToClickableButton("//button[@title='Россия']");
+        WebElement countryButton = waitToClickableButton("//button[@title='Р РѕСЃСЃРёСЏ']");
         countryButton.click();
-        logger.info("Выбрали страну");
+        logger.info("Р’С‹Р±СЂР°Р»Рё СЃС‚СЂР°РЅСѓ");
 
         WebElement city = waitToClickableButton("//div[@class='select" +
                 " lk-cv-block__input" +
@@ -88,22 +88,22 @@ public class HomeworkTest extends BaseHomeworkClass {
                 "js-lk-cv-dependent-slave-city" +
                 " js-lk-cv-custom-select']/*[1]/*[2]");
         city.click();
-        logger.info("Нажали на кнопку \"Город\"");
+        logger.info("РќР°Р¶Р°Р»Рё РЅР° РєРЅРѕРїРєСѓ \"Р“РѕСЂРѕРґ\"");
 
-        WebElement cityButton = waitToVisibleElement("//button[@title='Санкт-Петербург']");
+        WebElement cityButton = waitToVisibleElement("//button[@title='РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРі']");
         cityButton.click();
-        logger.info("Выбрали город");
+        logger.info("Р’С‹Р±СЂР°Р»Рё РіРѕСЂРѕРґ");
 
         WebElement engLevel = waitToVisibleElement("//div[@class='select" +
                 " lk-cv-block__input" +
                 " lk-cv-block__input_full" +
                 " js-lk-cv-custom-select']");
         engLevel.click();
-        logger.info("Нажали на кнопку \"Уровень английского\"");
+        logger.info("РќР°Р¶Р°Р»Рё РЅР° РєРЅРѕРїРєСѓ \"РЈСЂРѕРІРµРЅСЊ Р°РЅРіР»РёР№СЃРєРѕРіРѕ\"");
 
-        WebElement engLevelButton = waitToClickableButton("//button[@title='Элементарный уровень (Elementary)']");
+        WebElement engLevelButton = waitToClickableButton("//button[@title='Р­Р»РµРјРµРЅС‚Р°СЂРЅС‹Р№ СѓСЂРѕРІРµРЅСЊ (Elementary)']");
         engLevelButton.click();
-        logger.info("Выбрали уровень английского");
+        logger.info("Р’С‹Р±СЂР°Р»Рё СѓСЂРѕРІРµРЅСЊ Р°РЅРіР»РёР№СЃРєРѕРіРѕ");
 
         WebElement readyToMovingFirst = waitToVisibleElement("//label[@class='radio" +
                 " radio_light4" +
@@ -111,7 +111,7 @@ public class HomeworkTest extends BaseHomeworkClass {
                 " radio_vertical-center" +
                 " lk-cv-block__radio'][1]");
         readyToMovingFirst.click();
-        logger.info("Нажали на кнопку \"Готовность к переезду - нет\"");
+        logger.info("РќР°Р¶Р°Р»Рё РЅР° РєРЅРѕРїРєСѓ \"Р“РѕС‚РѕРІРЅРѕСЃС‚СЊ Рє РїРµСЂРµРµР·РґСѓ - РЅРµС‚\"");
 
         WebElement readyToMovingSecond = waitToVisibleElement("//label[@class='radio" +
                 " radio_light4" +
@@ -119,32 +119,32 @@ public class HomeworkTest extends BaseHomeworkClass {
                 " radio_vertical-center" +
                 " lk-cv-block__radio'][2]");
         readyToMovingSecond.click();
-        logger.info("Нажали на кнопку \"Готовность к переезду - да\"");
+        logger.info("РќР°Р¶Р°Р»Рё РЅР° РєРЅРѕРїРєСѓ \"Р“РѕС‚РѕРІРЅРѕСЃС‚СЊ Рє РїРµСЂРµРµР·РґСѓ - РґР°\"");
 
-        WebElement workFormat = waitToVisibleElement("//input[@title='Полный день']/..");
-        WebElement workFormatHide = driver.findElement(By.xpath("//input[@title='Полный день']"));
+        WebElement workFormat = waitToVisibleElement("//input[@title='РџРѕР»РЅС‹Р№ РґРµРЅСЊ']/..");
+        WebElement workFormatHide = driver.findElement(By.xpath("//input[@title='РџРѕР»РЅС‹Р№ РґРµРЅСЊ']"));
         boolean workFormatSelect = workFormatHide.isSelected();
         movingTheCheckboxToThePressedPosition(workFormatSelect, workFormat);
-        logger.info("Выключили и включили кнопку \"Формат работы - полный день\"");
+        logger.info("Р’С‹РєР»СЋС‡РёР»Рё Рё РІРєР»СЋС‡РёР»Рё РєРЅРѕРїРєСѓ \"Р¤РѕСЂРјР°С‚ СЂР°Р±РѕС‚С‹ - РїРѕР»РЅС‹Р№ РґРµРЅСЊ\"");
 
-        WebElement FlexibleSchedule = waitToVisibleElement("//input[@title='Гибкий график']/..");
-        WebElement FlexibleScheduleHide = driver.findElement(By.xpath("//input[@title='Гибкий график']"));
+        WebElement FlexibleSchedule = waitToVisibleElement("//input[@title='Р“РёР±РєРёР№ РіСЂР°С„РёРє']/..");
+        WebElement FlexibleScheduleHide = driver.findElement(By.xpath("//input[@title='Р“РёР±РєРёР№ РіСЂР°С„РёРє']"));
         boolean FlexibleScheduleSelect = FlexibleScheduleHide.isSelected();
         movingTheCheckboxToThePressedPosition(FlexibleScheduleSelect, FlexibleSchedule);
-        logger.info("Выключили и включили кнопку \"Формат работы - гибкий график\"");
+        logger.info("Р’С‹РєР»СЋС‡РёР»Рё Рё РІРєР»СЋС‡РёР»Рё РєРЅРѕРїРєСѓ \"Р¤РѕСЂРјР°С‚ СЂР°Р±РѕС‚С‹ - РіРёР±РєРёР№ РіСЂР°С„РёРє\"");
 
-        WebElement remotely = waitToVisibleElement("//input[@title='Удаленно']/..");
-        WebElement remotelyHide = driver.findElement(By.xpath("//input[@title='Удаленно']"));
+        WebElement remotely = waitToVisibleElement("//input[@title='РЈРґР°Р»РµРЅРЅРѕ']/..");
+        WebElement remotelyHide = driver.findElement(By.xpath("//input[@title='РЈРґР°Р»РµРЅРЅРѕ']"));
         boolean remotelySelect = remotelyHide.isSelected();
         movingTheCheckboxToThePressedPosition(remotelySelect, remotely);
-        logger.info("Выключили и включили кнопку \"Формат работы - удаленно\"");
+        logger.info("Р’С‹РєР»СЋС‡РёР»Рё Рё РІРєР»СЋС‡РёР»Рё РєРЅРѕРїРєСѓ \"Р¤РѕСЂРјР°С‚ СЂР°Р±РѕС‚С‹ - СѓРґР°Р»РµРЅРЅРѕ\"");
 
         List<WebElement> communicationMethod = driver.findElements(By.xpath("//div[@class='container__col container__col_12 container__col_middle']"));
         WebElement communicationMethodButton = waitToVisibleElement("//button[@class='lk-cv-block__action " +
                 "lk-cv-block__action_md-no-spacing js-formset-add" +
                 " js-lk-cv-custom-select-add']");
 
-        if (communicationMethod.size() < 2) {   //Если полей "Способ связи" меньше двух, то добавляет еще одно
+        if (communicationMethod.size() < 2) {   //Р•СЃР»Рё РїРѕР»РµР№ "РЎРїРѕСЃРѕР± СЃРІСЏР·Рё" РјРµРЅСЊС€Рµ РґРІСѓС…, С‚Рѕ РґРѕР±Р°РІР»СЏРµС‚ РµС‰Рµ РѕРґРЅРѕ
             communicationMethodButton.click();
         }
 
@@ -160,56 +160,56 @@ public class HomeworkTest extends BaseHomeworkClass {
 
         WebElement communicationMethodInputFirst = communicationMethodInputs.get(0);
         communicationMethodInputFirst.click();
-        logger.info("Нажали на первую кнопку \"Способ связи\"");
+        logger.info("РќР°Р¶Р°Р»Рё РЅР° РїРµСЂРІСѓСЋ РєРЅРѕРїРєСѓ \"РЎРїРѕСЃРѕР± СЃРІСЏР·Рё\"");
 
         List<WebElement> vkButton = driver.findElements(By.xpath("//button[@title='VK']"));
         WebElement vkButtonFirst = vkButton.get(0);
         vkButtonFirst.click();
-        logger.info("Выбрали ВК в первой кнопке \"Способ связи\"");
+        logger.info("Р’С‹Р±СЂР°Р»Рё Р’Рљ РІ РїРµСЂРІРѕР№ РєРЅРѕРїРєРµ \"РЎРїРѕСЃРѕР± СЃРІСЏР·Рё\"");
 
         WebElement communicationMethodTextFirst = driver.findElement(By.xpath("//input[@id='id_contact-0-value']"));
         communicationMethodTextFirst.clear();
         communicationMethodTextFirst.sendKeys("https://vk.com/id1");
-        logger.info("Очистили первое поле ввода \"Способ связи\" и заполнили данные ");
+        logger.info("РћС‡РёСЃС‚РёР»Рё РїРµСЂРІРѕРµ РїРѕР»Рµ РІРІРѕРґР° \"РЎРїРѕСЃРѕР± СЃРІСЏР·Рё\" Рё Р·Р°РїРѕР»РЅРёР»Рё РґР°РЅРЅС‹Рµ ");
 
         WebElement communicationMethodInputSecond = communicationMethodInputs.get(1);
         communicationMethodInputSecond.click();
         List<WebElement> whatsappButton = driver.findElements(By.xpath("//button[@title='WhatsApp']"));
         WebElement whatsappButtonSecond = whatsappButton.get(1);
         whatsappButtonSecond.click();
-        logger.info("Выбрали whatsapp во второй кнопке \"Способ связи\"");
+        logger.info("Р’С‹Р±СЂР°Р»Рё whatsapp РІРѕ РІС‚РѕСЂРѕР№ РєРЅРѕРїРєРµ \"РЎРїРѕСЃРѕР± СЃРІСЏР·Рё\"");
 
         WebElement communicationMethodTextSecond = driver.findElement(By.xpath("//input[@id='id_contact-1-value']"));
         communicationMethodTextSecond.clear();
         communicationMethodTextSecond.sendKeys("whatsappContact");
-        logger.info("Очистили второе поле ввода \"Способ связи\" и заполнили данные ");
+        logger.info("РћС‡РёСЃС‚РёР»Рё РІС‚РѕСЂРѕРµ РїРѕР»Рµ РІРІРѕРґР° \"РЎРїРѕСЃРѕР± СЃРІСЏР·Рё\" Рё Р·Р°РїРѕР»РЅРёР»Рё РґР°РЅРЅС‹Рµ ");
 
         WebElement gender = waitToClickableButton("//select[@name='gender']");
         gender.click();
-        logger.info("Нажали на кнопку \"Пол\"");
+        logger.info("РќР°Р¶Р°Р»Рё РЅР° РєРЅРѕРїРєСѓ \"РџРѕР»\"");
 
         WebElement genderM = waitToClickableButton("//option[@value='m']");
         genderM.click();
-        logger.info("Выбрали мужской пол");
+        logger.info("Р’С‹Р±СЂР°Р»Рё РјСѓР¶СЃРєРѕР№ РїРѕР»");
 
         WebElement company = waitToVisibleElement("//input[@name='company']");
         company.clear();
         company.sendKeys("Otus");
-        logger.info("Очистили поле ввода \"Компания\" и заполнили данные ");
+        logger.info("РћС‡РёСЃС‚РёР»Рё РїРѕР»Рµ РІРІРѕРґР° \"РљРѕРјРїР°РЅРёСЏ\" Рё Р·Р°РїРѕР»РЅРёР»Рё РґР°РЅРЅС‹Рµ ");
 
 
         WebElement position = waitToVisibleElement("//input[@name='work']");
         position.clear();
         position.sendKeys("qa engineer");
-        logger.info("Очистили поле ввода \"Должность\" и заполнили данные ");
+        logger.info("РћС‡РёСЃС‚РёР»Рё РїРѕР»Рµ РІРІРѕРґР° \"Р”РѕР»Р¶РЅРѕСЃС‚СЊ\" Рё Р·Р°РїРѕР»РЅРёР»Рё РґР°РЅРЅС‹Рµ ");
 
-        WebElement developmentAdd = waitToClickableButton("//a[@title='Добавить']");
+        WebElement developmentAdd = waitToClickableButton("//a[@title='Р”РѕР±Р°РІРёС‚СЊ']");
         developmentAdd.click();
-        logger.info("Добавили поле \"Опыт разработки\" ");
+        logger.info("Р”РѕР±Р°РІРёР»Рё РїРѕР»Рµ \"РћРїС‹С‚ СЂР°Р·СЂР°Р±РѕС‚РєРё\" ");
 
         List<WebElement> experienceRow = driver.findElements(By.xpath("//div[@class='experience-row js-formset-row']"));
 
-        if (experienceRow.size() > 1) {                        //Если строк "Опыт разработки больше 1ой, то удаляет лишнее"
+        if (experienceRow.size() > 1) {                        //Р•СЃР»Рё СЃС‚СЂРѕРє "РћРїС‹С‚ СЂР°Р·СЂР°Р±РѕС‚РєРё Р±РѕР»СЊС€Рµ 1РѕР№, С‚Рѕ СѓРґР°Р»СЏРµС‚ Р»РёС€РЅРµРµ"
             List<WebElement> deleteExpRow = driver.findElements(By.xpath("//div[@class='experience-row__remove ic-close js-formset-delete']"));
             WebElement deleteExpRowSecond = deleteExpRow.get(1);
             deleteExpRowSecond.click();
@@ -221,38 +221,38 @@ public class HomeworkTest extends BaseHomeworkClass {
 
         WebElement phpSelect = waitToClickableButton("//option[@value='11']");
         phpSelect.click();
-        logger.info("Выбрали PHP в \"Опыт разработки\" ");
+        logger.info("Р’С‹Р±СЂР°Р»Рё PHP РІ \"РћРїС‹С‚ СЂР°Р·СЂР°Р±РѕС‚РєРё\" ");
 
         WebElement expLevel = waitToClickableButton("//select[@name='experience-0-level']");
         expLevel.click();
 
         WebElement expLevelSelect = waitToClickableButton("//select[@name='experience-0-level']/*[2]");
         expLevelSelect.click();
-        logger.info("Выбрали 1 год в \"Опыт разработки\" ");
+        logger.info("Р’С‹Р±СЂР°Р»Рё 1 РіРѕРґ РІ \"РћРїС‹С‚ СЂР°Р·СЂР°Р±РѕС‚РєРё\" ");
 
-        Assert.assertEquals("Имя не совпадает!","Тест",name.getAttribute("value"));
-        Assert.assertEquals("Имя на латинице не совпадает!","Test",nameEng.getAttribute("value"));
-        Assert.assertEquals("Фамилия не совпадает!","Тестович",surname.getAttribute("value"));
-        Assert.assertEquals("Фамилия на латинице не совпадает!","Testovich",surnameEng.getAttribute("value"));
-        Assert.assertEquals("Дата рождения не совпадает!","11.09.1990",dateOfBirth.getAttribute("value"));
-        Assert.assertEquals("Страна не совпадает!","Россия",country.getText());
-        Assert.assertEquals("Город не совпадает!","Санкт-Петербург",city.getText());
-        Assert.assertEquals("Готовность к переезду- не нажато да",true,readyToMovingSecond.isEnabled());
-        Assert.assertEquals("Формат работы - полный день, не включена",true,workFormatSelect);
-        Assert.assertEquals("Формат работы - гибкий график, не включена",true,FlexibleScheduleSelect);
-        Assert.assertEquals("Формат работы - удаленно, не включена",true,remotelySelect);
-        Assert.assertEquals("Контакт ВК не совпадает!","https://vk.com/id1",communicationMethodTextFirst.getAttribute("value"));
-        Assert.assertEquals("Контакт WhatsApp не совпадает!","whatsappContact",communicationMethodTextSecond.getAttribute("value"));
-        Assert.assertEquals("Пол мужской не выбран!",true,genderM.isSelected());
-        Assert.assertEquals("Компания не совпадает!","Otus",company.getAttribute("value"));
-        Assert.assertEquals("Должность не совпадает!","qa engineer",position.getAttribute("value"));
-        Assert.assertEquals("Опыт разработки- PHP, не выбран!",true,phpSelect.isSelected());
-        Assert.assertEquals("Опыт разработки- 1 год, не выбран!",true,expLevelSelect.isSelected());
-        logger.info("Все Assert'ы совпали ");
+        Assert.assertEquals("РРјСЏ РЅРµ СЃРѕРІРїР°РґР°РµС‚!","РўРµСЃС‚",name.getAttribute("value"));
+        Assert.assertEquals("РРјСЏ РЅР° Р»Р°С‚РёРЅРёС†Рµ РЅРµ СЃРѕРІРїР°РґР°РµС‚!","Test",nameEng.getAttribute("value"));
+        Assert.assertEquals("Р¤Р°РјРёР»РёСЏ РЅРµ СЃРѕРІРїР°РґР°РµС‚!","РўРµСЃС‚РѕРІРёС‡",surname.getAttribute("value"));
+        Assert.assertEquals("Р¤Р°РјРёР»РёСЏ РЅР° Р»Р°С‚РёРЅРёС†Рµ РЅРµ СЃРѕРІРїР°РґР°РµС‚!","Testovich",surnameEng.getAttribute("value"));
+        Assert.assertEquals("Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ РЅРµ СЃРѕРІРїР°РґР°РµС‚!","11.09.1990",dateOfBirth.getAttribute("value"));
+        Assert.assertEquals("РЎС‚СЂР°РЅР° РЅРµ СЃРѕРІРїР°РґР°РµС‚!","Р РѕСЃСЃРёСЏ",country.getText());
+        Assert.assertEquals("Р“РѕСЂРѕРґ РЅРµ СЃРѕРІРїР°РґР°РµС‚!","РЎР°РЅРєС‚-РџРµС‚РµСЂР±СѓСЂРі",city.getText());
+        Assert.assertEquals("Р“РѕС‚РѕРІРЅРѕСЃС‚СЊ Рє РїРµСЂРµРµР·РґСѓ- РЅРµ РЅР°Р¶Р°С‚Рѕ РґР°",true,readyToMovingSecond.isEnabled());
+        Assert.assertEquals("Р¤РѕСЂРјР°С‚ СЂР°Р±РѕС‚С‹ - РїРѕР»РЅС‹Р№ РґРµРЅСЊ, РЅРµ РІРєР»СЋС‡РµРЅР°",true,workFormatSelect);
+        Assert.assertEquals("Р¤РѕСЂРјР°С‚ СЂР°Р±РѕС‚С‹ - РіРёР±РєРёР№ РіСЂР°С„РёРє, РЅРµ РІРєР»СЋС‡РµРЅР°",true,FlexibleScheduleSelect);
+        Assert.assertEquals("Р¤РѕСЂРјР°С‚ СЂР°Р±РѕС‚С‹ - СѓРґР°Р»РµРЅРЅРѕ, РЅРµ РІРєР»СЋС‡РµРЅР°",true,remotelySelect);
+        Assert.assertEquals("РљРѕРЅС‚Р°РєС‚ Р’Рљ РЅРµ СЃРѕРІРїР°РґР°РµС‚!","https://vk.com/id1",communicationMethodTextFirst.getAttribute("value"));
+        Assert.assertEquals("РљРѕРЅС‚Р°РєС‚ WhatsApp РЅРµ СЃРѕРІРїР°РґР°РµС‚!","whatsappContact",communicationMethodTextSecond.getAttribute("value"));
+        Assert.assertEquals("РџРѕР» РјСѓР¶СЃРєРѕР№ РЅРµ РІС‹Р±СЂР°РЅ!",true,genderM.isSelected());
+        Assert.assertEquals("РљРѕРјРїР°РЅРёСЏ РЅРµ СЃРѕРІРїР°РґР°РµС‚!","Otus",company.getAttribute("value"));
+        Assert.assertEquals("Р”РѕР»Р¶РЅРѕСЃС‚СЊ РЅРµ СЃРѕРІРїР°РґР°РµС‚!","qa engineer",position.getAttribute("value"));
+        Assert.assertEquals("РћРїС‹С‚ СЂР°Р·СЂР°Р±РѕС‚РєРё- PHP, РЅРµ РІС‹Р±СЂР°РЅ!",true,phpSelect.isSelected());
+        Assert.assertEquals("РћРїС‹С‚ СЂР°Р·СЂР°Р±РѕС‚РєРё- 1 РіРѕРґ, РЅРµ РІС‹Р±СЂР°РЅ!",true,expLevelSelect.isSelected());
+        logger.info("Р’СЃРµ Assert'С‹ СЃРѕРІРїР°Р»Рё ");
 
-        WebElement saveAndContinue = waitToClickableButton("//button[@title='Сохранить и продолжить']");
+        WebElement saveAndContinue = waitToClickableButton("//button[@title='РЎРѕС…СЂР°РЅРёС‚СЊ Рё РїСЂРѕРґРѕР»Р¶РёС‚СЊ']");
         saveAndContinue.click();
-        logger.info("Сохранили ");
+        logger.info("РЎРѕС…СЂР°РЅРёР»Рё ");
 
     }
 
