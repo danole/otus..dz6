@@ -16,6 +16,25 @@ public class BaseHomeworkClass {
     protected Logger logger = LogManager.getLogger(HomeworkTest.class.getName());
     protected static WebDriver driver;
 
+    protected void signUp(){
+        driver.get("https://otus.ru");
+        logger.info("Открылся браузер, перешли на сайт");
+
+        WebElement registrationModalWindow = waitToClickableButton("//button[@class='header2__auth js-open-modal']");
+        registrationModalWindow.click();
+        logger.info("Открылось модальное окно для регистрации ");
+
+        WebElement email = waitToVisibleElement("//input[@type='text' and @name='email' and @autocomplete='off']");
+        WebElement password = waitToVisibleElement("//input[@name='password']");
+        WebElement submit = waitToClickableButton("//button[@class='new-button new-button_full new-button_blue new-button_md']");
+        String passwordProp = System.getProperty("password");
+        String loginProp = System.getProperty("login");
+        email.sendKeys(loginProp);
+        password.sendKeys(passwordProp);
+        submit.submit();
+        logger.info("Вошли в личный кабинет");
+    }
+
     @BeforeEach
     protected void startUp() {
         WebDriverManager.chromedriver().setup();
