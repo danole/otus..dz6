@@ -8,7 +8,7 @@ import java.util.List;
 public class HomeworkTest extends BaseHomeworkClass {
 
     @Test
-    public void writeAboutMeTest() throws InterruptedException {
+    public void writeAboutMeTest() {
 
         driver.get("https://otus.ru");
         logger.info("Открылся браузер, перешли на сайт");
@@ -20,13 +20,12 @@ public class HomeworkTest extends BaseHomeworkClass {
         WebElement email = waitToVisibleElement("//input[@type='text' and @name='email' and @autocomplete='off']");
         WebElement password = waitToVisibleElement("//input[@name='password']");
         WebElement submit = waitToClickableButton("//button[@class='new-button new-button_full new-button_blue new-button_md']");
-        String passwordProp=System.getProperty("password");
-        String emailProp=System.getProperty("email");
-        email.sendKeys(emailProp);
+        String passwordProp = System.getProperty("password");
+        String loginProp = System.getProperty("login");
+        email.sendKeys(loginProp);
         password.sendKeys(passwordProp);
         submit.submit();
 
-//        signUp(email, password, submit);
         logger.info("Вошли в личный кабинет");
 
         WebElement headerRight = waitToClickableButton("//div[@class='header2-menu__item" +
@@ -230,24 +229,24 @@ public class HomeworkTest extends BaseHomeworkClass {
         expLevelSelect.click();
         logger.info("Выбрали 1 год в \"Опыт разработки\" ");
 
-        Assert.assertEquals("Имя не совпадает!","Тест",name.getAttribute("value"));
-        Assert.assertEquals("Имя на латинице не совпадает!","Test",nameEng.getAttribute("value"));
-        Assert.assertEquals("Фамилия не совпадает!","Тестович",surname.getAttribute("value"));
-        Assert.assertEquals("Фамилия на латинице не совпадает!","Testovich",surnameEng.getAttribute("value"));
-        Assert.assertEquals("Дата рождения не совпадает!","11.09.1990",dateOfBirth.getAttribute("value"));
-        Assert.assertEquals("Страна не совпадает!","Россия",country.getText());
-        Assert.assertEquals("Город не совпадает!","Санкт-Петербург",city.getText());
-        Assert.assertEquals("Готовность к переезду- не нажато да",true,readyToMovingSecond.isEnabled());
-        Assert.assertEquals("Формат работы - полный день, не включена",true,workFormatSelect);
-        Assert.assertEquals("Формат работы - гибкий график, не включена",true,FlexibleScheduleSelect);
-        Assert.assertEquals("Формат работы - удаленно, не включена",true,remotelySelect);
-        Assert.assertEquals("Контакт ВК не совпадает!","https://vk.com/id1",communicationMethodTextFirst.getAttribute("value"));
-        Assert.assertEquals("Контакт WhatsApp не совпадает!","whatsappContact",communicationMethodTextSecond.getAttribute("value"));
-        Assert.assertEquals("Пол мужской не выбран!",true,genderM.isSelected());
-        Assert.assertEquals("Компания не совпадает!","Otus",company.getAttribute("value"));
-        Assert.assertEquals("Должность не совпадает!","qa engineer",position.getAttribute("value"));
-        Assert.assertEquals("Опыт разработки- PHP, не выбран!",true,phpSelect.isSelected());
-        Assert.assertEquals("Опыт разработки- 1 год, не выбран!",true,expLevelSelect.isSelected());
+        Assert.assertEquals("Имя не совпадает!", "Тест", name.getAttribute("value"));
+        Assert.assertEquals("Имя на латинице не совпадает!", "Test", nameEng.getAttribute("value"));
+        Assert.assertEquals("Фамилия не совпадает!", "Тестович", surname.getAttribute("value"));
+        Assert.assertEquals("Фамилия на латинице не совпадает!", "Testovich", surnameEng.getAttribute("value"));
+        Assert.assertEquals("Дата рождения не совпадает!", "11.09.1990", dateOfBirth.getAttribute("value"));
+        Assert.assertEquals("Страна не совпадает!", "Россия", country.getText());
+        Assert.assertEquals("Город не совпадает!", "Санкт-Петербург", city.getText());
+        Assert.assertEquals("Готовность к переезду- не нажато да", true, readyToMovingSecond.isEnabled());
+        Assert.assertEquals("Формат работы - полный день, не включена", true, workFormatSelect);
+        Assert.assertEquals("Формат работы - гибкий график, не включена", true, FlexibleScheduleSelect);
+        Assert.assertEquals("Формат работы - удаленно, не включена", true, remotelySelect);
+        Assert.assertEquals("Контакт ВК не совпадает!", "https://vk.com/id1", communicationMethodTextFirst.getAttribute("value"));
+        Assert.assertEquals("Контакт WhatsApp не совпадает!", "whatsappContact", communicationMethodTextSecond.getAttribute("value"));
+        Assert.assertEquals("Пол мужской не выбран!", true, genderM.isSelected());
+        Assert.assertEquals("Компания не совпадает!", "Otus", company.getAttribute("value"));
+        Assert.assertEquals("Должность не совпадает!", "qa engineer", position.getAttribute("value"));
+        Assert.assertEquals("Опыт разработки- PHP, не выбран!", true, phpSelect.isSelected());
+        Assert.assertEquals("Опыт разработки- 1 год, не выбран!", true, expLevelSelect.isSelected());
         logger.info("Все Assert'ы совпали ");
 
         WebElement saveAndContinue = waitToClickableButton("//button[@title='Сохранить и продолжить']");
@@ -255,6 +254,4 @@ public class HomeworkTest extends BaseHomeworkClass {
         logger.info("Сохранили ");
 
     }
-
-
 }
